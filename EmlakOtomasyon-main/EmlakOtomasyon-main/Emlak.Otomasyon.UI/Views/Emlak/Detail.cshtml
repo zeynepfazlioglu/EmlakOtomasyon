@@ -1,0 +1,56 @@
+﻿@using Emlak.Otomasyon.Core.Enums
+@model Emlak.Otomasyon.Model.Entity.Emlak
+@{
+    ViewBag.Title = "Emlak Bilgi Girişi";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">Emlak Bilgi Girişi</div>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <input class="form-control" asp-for="Id" hidden />
+            <div class="mb-3">
+                <label  class="form-label">Başlık</label>
+                <input class="form-control" asp-for="Baslik" />
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Emlak Tipi</label>
+                <select class="form-select" asp-items="Html.GetEnumSelectList<EmlakTipi>()" asp-for="EmlakTipi">
+                   
+                </select>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">İlçe</label>
+                <input class="form-control" asp-for="Ilce" />
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Şehir</label>
+                <input class="form-control" asp-for="Sehir" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Alan</label>
+                <input class ="form-control" asp-for="alan" />
+            </div>
+            <div class="mb-3">
+            <label class="form-label">Oda Sayısı</label>
+            <input class="form-control" asp-for="odasayisi" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Durum</label>
+                <select class="form-select" asp-items="Html.GetEnumSelectList<Durum>()" asp-for="durum">
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fiyat</label>
+                <input class="form-control" asp-for="fiyat" />
+            </div>
+          
+
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+</div>
